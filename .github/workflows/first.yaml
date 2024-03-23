@@ -13,6 +13,10 @@ defaults:
 jobs:
   trivy_file_scan:
     runs-on: ubuntu-22.04
+    permissions:
+      id-token: write
+      contents: write              # This is required for actions/checkout@v1
+      security-events: write   # To upload sarif files
     steps:
       - uses: actions/checkout@v4
       - name: Run trivy Scan
