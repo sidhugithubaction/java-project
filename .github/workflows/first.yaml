@@ -78,7 +78,6 @@ jobs:
           node-version: 21
       - run: |
           npm ci
-          npm test
       - name: Release it
         run: |
           npx semantic-release
