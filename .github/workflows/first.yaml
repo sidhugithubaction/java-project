@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     container: 
       image: aquasec/trivy:latest
-      options: --entrypoint ''
+      options: --entrypoint [""]
     steps:
       - run: |
           trivy fs --format table -o fs-scan.html --scanners vuln,misconfig --severity HIGH,CRITICAL .
