@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/sidhugithubaction/java-project/compare/v1.0.0...v1.0.1) (2024-03-23)
+
+
+### Bug Fixes
+
+* Fixed the contents in Dockerfile ([4094fbb](https://github.com/sidhugithubaction/java-project/commit/4094fbb69f8cc2e3226f40a52476ea399baabd61))
+
 # 1.0.0 (2024-03-23)
 
 
