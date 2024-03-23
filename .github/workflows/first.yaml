@@ -11,6 +11,21 @@ defaults:
     shell: bash
 
 jobs:
+  trivy_file_scan:
+    runs-on: ubuntu-22.04
+    container: 
+      image: aquasec/trivy:latest
+      options: --entrypoint ''
+    steps:
+      - run: |
+          trivy fs --format table -o fs-scan.html --scanners vuln,misconfig --severity HIGH,CRITICAL .
+          trivy fs --format json -o fs-scan.json --scanners vuln,misconfig --severity HIGH,CRITICAL .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trivy-fs-report
+          path: |
+            fs-scan.html
+            fs-scan.json
   SAST_job_sonar:
     runs-on: ubuntu-22.04
     steps:
